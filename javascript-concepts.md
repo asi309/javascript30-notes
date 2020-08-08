@@ -79,3 +79,14 @@ Example of prototype usage:
     }
   </code>
 </pre>
+
+###### Prototype property:
+
+The prototype property is used in prototype-based inheritance.
+For example, lets say that the student is inherited from a parent class named *Person*, since each student is also a person and students are individuals having
+properties other than those of a student, like, age and nationality.
+<pre>
+  <code>
+    Student.prototype = new Person();
+  </code>
+</pre>
