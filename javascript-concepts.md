@@ -34,6 +34,7 @@ For example,
         this.age = age,
         this.nationality = nationality
     }
+  </code>
 </pre>
 
 Calling the function createObj with the necessary parameters will create a new Object. The constructor returns the created object, therefore, it can be assigned
