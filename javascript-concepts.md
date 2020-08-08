@@ -22,7 +22,7 @@ For example,
 apply.
 
 
-###### Object Constructors
+#### Object Constructors
 
 *Object Constructors* are functions that can be called to create new Objects.
 
@@ -40,7 +40,7 @@ Calling the function createObj with the necessary parameters will create a new O
 to a variable for use.
 
 
-###### The Prototype
+#### The Prototype
 
 *Prototype* is an object that the created object is inherited from. 
 
