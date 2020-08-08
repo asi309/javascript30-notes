@@ -1,9 +1,5 @@
 ### Lesson 1:
 
-<code>
- name="abc"
-</code>
-
 **data-xyz**: The *data-* attribute is used to add custom data to your HTML page. This helps to create the custom attributes in tags that you can manipulate and use accordingly.
 
 **audio**: The audio tag helps to play audio using the *play()* function.
