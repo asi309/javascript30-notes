@@ -3,7 +3,8 @@
 
 [short URL](https://git.io/js30-notes)
 
-<links markdown="block">
+<details markdown="block">
   <summary> Page Links </summary>
   
+* [JS Concepts](https://asi309.github.io/javascript30-notes/javascript-concepts.html)
 * [Lesson Logs](https://asi309.github.io/javascript30-notes/log.html)
