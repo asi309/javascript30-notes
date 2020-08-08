@@ -63,3 +63,18 @@ For example,
 </pre>
 Both times, the variable *obj* will have prototype as *Object* which is the class every Object is inherited from.
 Similarly, arrays created with <code>var arr = new Array()</code> (or) <code>var arr = []</code> will have prototype *Array*
+
+If, however, we use *object constructors* to create objects, the prototype for this object will have a *constructor* property that will have value equal to the constructor function used to create the object.
+
+Example of prototype usage:
+<pre>
+  <code>
+    var Student = function (name, grade) {
+        this.name = name,
+        this.grade = grade
+    }
+    Student.prototype.sayName = function () {
+        console.log(this.name);
+    }
+  </code>
+</pre>
