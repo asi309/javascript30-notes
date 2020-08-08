@@ -39,3 +39,27 @@ For example,
 Calling the function createObj with the necessary parameters will create a new Object. The constructor returns the created object, therefore, it can be assigned
 to a variable for use.
 
+
+###### The Prototype
+
+*Prototype* is an object that the created object is inherited from. 
+
+In other words, every JS Object is inherited from some prototype objects. Thus, the created object has access to **methods** and **properties** of the prototype.
+Examples of prototypes: Array prototype, Object prototype
+
+For example, 
+<pre>
+  <code>
+    var obj = new Object();
+  </code>
+</pre>
+
+(OR)
+
+<pre>
+  <code>
+    var obj = {};
+  </code>
+</pre>
+Both times, the variable *obj* will have prototype as *Object* which is the class every Object is inherited from.
+Similarly, arrays created with <code>var arr = new Array()</code> (or) <code>var arr = []</code> will have prototype *Array*
