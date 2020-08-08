@@ -80,13 +80,55 @@ Example of prototype usage:
   </code>
 </pre>
 
-###### Prototype property:
-
-The prototype property is used in prototype-based inheritance.
-For example, lets say that the student is inherited from a parent class named *Person*, since each student is also a person and students are individuals having
-properties other than those of a student, like, age and nationality.
+**Protoype Inheritance** can be done using many methods, like defining the <code>__proto__</code> property of the object while creating.
+However, at this point, the proper way of using *prototype inheritance* is by using <code>Object.create</code> to assign a copy of the parent prototype to the
+prototype of the child object.
+For example,
 <pre>
   <code>
-    Student.prototype = new Person();
+    var student = function (name) {
+        this.name = name
+    }
+    student.prototype.getName = function () {
+        console.log(this.name);
+    }
+    var midSchoolStudent = function (name, grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+    midSchoolStudent.prototype = Object.create(student.prototype);
+    
+    var s1 = new midSchoolStudent('qwerty', 7);
+    s1.getName(); //logs qwerty
+  </code>
+</pre>
+
+**Note**: Always use <code>Object.create</code> while chaining prototype for inheritance, otherwise, it will directly assign the prototype of the parent object and not a copy of it. This can lead to unpredicted behaviour.
+For example,using the above example to demonstrate:
+<pre>
+  <code>
+    var student = function (name) {
+        this.name = name
+    }
+    student.prototype.getName = function () {
+        console.log(this.name);
+    }
+    var midSchoolStudent = function (name, grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+    midSchoolStudent.prototype = student.prototype; //Never ever do this!
+    
+    var highSchoolStudent = function (name, grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+    highSchoolStudent.prototype = student.prototype
+    highSchoolStudent.prototype.getName = function () {
+        console.log("NOPE! I don't think so");
+    }
+    
+    var s1 = new midSchoolStudent('qwerty', 8);
+    s1.getName(); //logs "NOPE! I don't think so" since the getName function got edited using the highSchoolStudent prototype
   </code>
 </pre>
